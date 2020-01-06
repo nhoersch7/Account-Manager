@@ -29,7 +29,7 @@ public class PasswordManager{
 
     //method for creating the password file upon first program use.
     //will not re-create file if it already exists.
-    public static void createFile() throws IOException {
+    public void createFile() throws IOException {
         File testfile = new File("progfile.txt");
         testfile.createNewFile();
     }
@@ -38,7 +38,7 @@ public class PasswordManager{
  * @throws IOException *******************************************************************************************/
 
     //method for entering a new password to the list.
-    public static void enterNewPassword() throws IOException {
+    public void enterNewPassword() throws IOException {
       
         String str1, str2, str3;
         Component frame = null;
@@ -85,7 +85,7 @@ public class PasswordManager{
     
 /**
  * @throws FileNotFoundException *******************************************************************************************/
-    public static void viewPasswordList() throws FileNotFoundException {
+    public void viewPasswordList() throws FileNotFoundException {
         Component frame = null;
         //create passList
         String passList = null;
@@ -123,10 +123,12 @@ public class PasswordManager{
 /*********************************************************************************************/
 
     public static void main(String args[]) throws IOException{
+        
+        PasswordManager pass = new PasswordManager();
 
         /*********************************************************************************************/
         //create the file if not already in existence.
-        createFile();
+        pass.createFile();
 
         /*********************************************************************************************/
         //load file
@@ -191,11 +193,11 @@ public class PasswordManager{
         //run different operations based on the entered option.
         if(n == 0) {
             //run method to enter a new password to the list
-            enterNewPassword();
+            pass.enterNewPassword();
         }
         else if(n == 1) {
             // run method to show the password list.
-            viewPasswordList();
+            pass.viewPasswordList();
         }
         else{
             quit=1;
