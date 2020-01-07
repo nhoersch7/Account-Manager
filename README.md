@@ -6,15 +6,8 @@ This is a small program designed to help track login info for various accounts.
 Java Runtime and Open JDK Environment 1.8+
 
 ## Set-Up
-To set up the program, download the program from GitHub as a .zip and extract to any directory.
 
-![Extract Instruction Image](https://github.com/nhoersch7/Password-Manager/blob/update1/Readme_images/Extract.png?raw=true)
-
-Run a powershell or terminal window from the directory. On windows, hold shift while right clicking in the directory to open this menu.
-
-In the powershell/terminal window, run the java command to compile the PasswordManager.java file: "javac PasswordManager.java"
-
-Then run the following command: "java PasswordManager". This will launch the program. After the initial setup, skip to this step to re-launch the program.
+Just extract, compile, and run.
 
 ## Using the Program
 Running the program will present the main menu.
