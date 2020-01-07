@@ -13,6 +13,7 @@ Then run the following command: "java PasswordManager". This will launch the pro
 
 ## Using the Program
 Running the program will present the main menu.
+
 ![Main menu](https://github.com/nhoersch7/Password-Manager/blob/update1/Readme_images/main%20menu.png?raw=true)
 
 From the main menu, you can select to enter a new password, or view the current password list.
