@@ -3,7 +3,7 @@ This is a small program designed to help track login info for various accounts.
 
 ## Requirements
 
-Java JDK Runtime 1.8+
+Java Runtime and Open JDK Environment 1.8+
 
 ## Set-Up
 To set up the program, download the program from GitHub as a .zip and extract to any directory.
