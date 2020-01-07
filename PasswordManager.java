@@ -85,12 +85,8 @@ public class PasswordManager{
     
 /**
  * @throws FileNotFoundException *******************************************************************************************/
-    public void viewPasswordList() throws FileNotFoundException {
-        Component frame = null;
-        //create passList
-        String passList = null;
-
-        //create passList string to output in the message dialog.
+    public void viewPasswordList() throws FileNotFoundException{
+            
         
         ArrayList<String> tempList = new ArrayList<String>();
         
@@ -107,7 +103,7 @@ public class PasswordManager{
         str1 = str1.replace('[', ' ');
         str1 = str1.replaceAll(",", "\n");
 
-        //JOptionPane.showMessageDialog(frame, str1);
+        
         JTextArea textArea = new JTextArea(str1);
         JScrollPane scrollPane = new JScrollPane(textArea);  
         textArea.setLineWrap(true);  
@@ -134,7 +130,8 @@ public class PasswordManager{
         //load file
         try {
             BufferedReader br = new BufferedReader(new FileReader("progfile.txt"));
-            String currLine;
+            br.close();
+            
         }
         catch(IOException e){
             e.printStackTrace();
@@ -143,7 +140,7 @@ public class PasswordManager{
         BufferedReader br = new BufferedReader(new FileReader("progfile.txt"));
         BufferedReader br1 = new BufferedReader(new FileReader("progfile.txt"));
         BufferedReader br2 = new BufferedReader(new FileReader("progfile.txt"));
-        //String currLine;
+        
         
         //set scanner and scan for types
         Scanner scan = new Scanner(br);
