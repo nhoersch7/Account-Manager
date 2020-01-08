@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
-public class PasswordManager{
+public class AccountManager{
 
 /*********************************************************************************************/
     //create array for password temp storage
@@ -40,12 +40,30 @@ public class PasswordManager{
     //method for entering a new password to the list.
     public void enterNewPassword() throws IOException {
       
-        String str1, str2, str3;
+        String str1 = null, str2 = null, str3 = null;
         Component frame = null;
+
+        int quit = 0;
+
+        while(quit == 0){
+        
         
         str1 = JOptionPane.showInputDialog("Enter Account Type");
+        while(str1.isEmpty()){
+            str1 = JOptionPane.showInputDialog("Enter Account Type");
+        }
+
         str2 = JOptionPane.showInputDialog("Enter Username");
+        while(str2.isEmpty()){
+            str2 = JOptionPane.showInputDialog("Enter Username");
+        }
+
         str3 = JOptionPane.showInputDialog("Enter Password");
+        while(str3.isEmpty()){
+            str3 = JOptionPane.showInputDialog("Enter Password");
+
+        }
+        
 
         int confirm = JOptionPane.showConfirmDialog(frame, "Is the following Correct?\n" + "Type: " + str1 + "\n" + 
                                               "Username: " + str2 + "\n" + "Password: " + str3);
@@ -56,17 +74,20 @@ public class PasswordManager{
                 usernames.add(str2);
                 passwords.add(str3);
                 JOptionPane.showMessageDialog(frame, "Added");
+                quit = 1;
                 break;
             case 1 :
-                JOptionPane.showMessageDialog(frame, "Not added");
+                JOptionPane.showMessageDialog(frame, "Please re-enter the account info.");
                 break;
             case 2 :
                 JOptionPane.showMessageDialog(frame, "Cancelled");
+                quit = 1;
                 break;
             default:
-                
+                quit = 1;
                 break;
         }
+    }
         
         
         BufferedWriter writer = new BufferedWriter(new FileWriter("progfile.txt"));
@@ -109,7 +130,7 @@ public class PasswordManager{
         textArea.setLineWrap(true);  
         textArea.setWrapStyleWord(true); 
         scrollPane.setPreferredSize( new Dimension( 300, 500 ) );
-        JOptionPane.showMessageDialog(null, scrollPane, "Password Manager",  
+        JOptionPane.showMessageDialog(null, scrollPane, "Account Manager",  
                                                JOptionPane.YES_NO_OPTION);
         
         
@@ -120,7 +141,7 @@ public class PasswordManager{
 
     public static void main(String args[]) throws IOException{
         
-        PasswordManager pass = new PasswordManager();
+        AccountManager pass = new AccountManager();
 
         /*********************************************************************************************/
         //create the file if not already in existence.
@@ -179,11 +200,11 @@ public class PasswordManager{
         int quit = 0;
         while(quit == 0) {
         //create first dialog screen for user.
-        Object[] options = {"Enter a new password","See the list"};
+        Object[] options = {"ENTER NEW ACCOUNT INFO","SEE THE ACCOUNT INFO LIST"};
         Component frame = null;
         int n = JOptionPane.showOptionDialog(frame,
-            "Would you like to see the password list or enter a new password?",
-            "Password Manager", JOptionPane.YES_NO_CANCEL_OPTION,
+            "Thanks for using Account Manager. Please choose from the following options:",
+            "Acount Manager", JOptionPane.YES_NO_CANCEL_OPTION,
             JOptionPane.QUESTION_MESSAGE, null, options, null);
 
         /*********************************************************************************************/
