@@ -1,4 +1,4 @@
-# Password Manager
+# Account Manager
 This is a small program designed to help track login info for various accounts.
 
 ## Requirements
