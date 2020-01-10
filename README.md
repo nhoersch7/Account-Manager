@@ -35,4 +35,4 @@ Pressing okay will take you back to the main menu.
 
 Pressing the x in the upper right corner, will close the program.
 
-The account info is stored in progfile.txt in the same directory as the program file itself. The account-info list should stay updated with new info after program use, and should remain updated.
+The account info is stored in progfile.txt in the same directory as the program file itself. The account-info list should stay updated with new info after the program is exited.
